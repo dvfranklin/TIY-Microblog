@@ -1,0 +1,36 @@
+<html>
+<body>
+
+<h1>Microblog</h1>
+
+<form action="/create-message" method="post">
+    <input type="text" placeholder="Write a message" name="message"/>
+    <button type="submit">Submit</button>
+</form>
+
+<form action="/delete" method="post">
+    <input type="text" placeholder="Message #" name="messageId"/>
+    <button type="submit">Delete</button>
+</form>
+
+<form action="/edit" method="post">
+    <input type="text" placeholder="Message #" name="messageId">
+    <input type="text" placeholder="New message" name="messageText">
+    <button type="submit">Edit</button>
+</form>
+
+<form action="/logout" method="get">
+    <button type="submit">Logout</button>
+</form>
+
+
+<h3>Messages by {{user.userName}}</h3>
+
+<ol>
+{{#user.messages}}
+    <li>{{messageText}}</li>
+{{/user.messages}}
+</ol>
+
+</body>
+</html>
